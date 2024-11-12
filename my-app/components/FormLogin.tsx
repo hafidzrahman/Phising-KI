@@ -1,6 +1,6 @@
 'use client'
 
-import { Dispatch, FormEvent, SetStateAction } from "react";
+import { Dispatch,  SetStateAction } from "react";
 import InputField from "@/components/InputField";
 import { useState } from 'react';
 import { VscAccount } from "react-icons/vsc";
@@ -41,13 +41,12 @@ export default function FormLogin({setIsClaim} : FormLoginType) {
 
   if (isNext >= 2) {
 
-    let typeInput = "password";
 
     InputForm = <div className="xs:mt-10 sms:w-[40%] xs:flex xs:flex-col xs:justify-between sms:items-end relative text-[14px] animate-translation">
       <div>
         <p>Untuk melanjutkan, verifikasi diri anda terlebih dahulu</p>
         <div className="w-full mt-10">
-          < InputField placeHolder="Masukkan kata sandi" type={typeInput} id="password" inputValue={passwordInputValue} setInputValue={setPasswordInputValue}/>
+          < InputField placeHolder="Masukkan kata sandi" type="password" id="password" inputValue={passwordInputValue} setInputValue={setPasswordInputValue}/>
         </div>
       </div>
       <div className="xs:mt-32 text-[14px] flex justify-between sms:items-center">
