@@ -5,6 +5,9 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Background from '@/public/background.jpg';
 
+if (typeof window === 'object') {
+alert("Situs tidak aman! \nSitus ini hanya dipergunakan semata-mata sebagai sarana edukasi mengenai serangan siber yang berbentuk phising. \nAnda tidak perlu mempercayai setiap informasi yang ada pada situs ini. \nSitus ini juga mencoba meniru tampilan situs login milik google. \nSegala elemen yang ada pada tampilan login situs ini tidak lain milik google")
+}
 
 export default function Home() {
   const [isClaim, setIsClaim] = useState<boolean>(false);
