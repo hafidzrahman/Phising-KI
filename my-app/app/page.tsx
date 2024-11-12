@@ -13,10 +13,6 @@ export default function Home() {
     setIsClaim(true);
   }
 
-  function finish() {
-    setIsClaim(false);
-  }
-
   return <div className="md:bg-primary sm:bg-white h-[100vh] sm:flex sm:flex-col md:justify-center md:items-center">
     <div className='w-[90%] h-[90%] rounded-2xl flex justify-between overflow-hidden'>
       <div className="w-[50%] h-[100%]">

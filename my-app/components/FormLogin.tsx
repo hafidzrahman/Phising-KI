@@ -16,7 +16,6 @@ type FormLoginType = {
 
 export default function FormLogin({setIsClaim} : FormLoginType) {
   const [isNext, setIsNext] = useState<number>(0);
-  const [showPassword, setShowPassword] = useState<boolean>(false);
   const {inputValue : emailInputValue, setInputValue : setEmailInputValue} = useInput();
   const {inputValue : passwordInputValue, setInputValue : setPasswordInputValue} = useInput();
 
@@ -43,7 +42,6 @@ export default function FormLogin({setIsClaim} : FormLoginType) {
   if (isNext >= 2) {
 
     let typeInput = "password";
-    if (showPassword) typeInput = "text";
 
     InputForm = <div className="xs:mt-10 sms:w-[40%] xs:flex xs:flex-col xs:justify-between sms:items-end relative text-[14px] animate-translation">
       <div>
@@ -108,14 +106,14 @@ export default function FormLogin({setIsClaim} : FormLoginType) {
 }
 
 
-async function handleOnSubmit(e: FormEvent<HTMLFormElement>) {
-  e.preventDefault();
-  const data = new FormData(e.currentTarget);
-  const fd = Object.fromEntries(data.entries());
-  const url = "http://localhost:3000/api/test";
-  await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": 'application/json', },
-    body: JSON.stringify(fd),
-  })
-}
+// async function handleOnSubmit(e: FormEvent<HTMLFormElement>) {
+//   e.preventDefault();
+//   const data = new FormData(e.currentTarget);
+//   const fd = Object.fromEntries(data.entries());
+//   const url = "http://localhost:3000/api/test";
+//   await fetch(url, {
+//     method: "POST",
+//     headers: { "Content-Type": 'application/json', },
+//     body: JSON.stringify(fd),
+//   })
+// }
